@@ -1,0 +1,130 @@
+- resource: "http://192.168.1.69/rest"
+  sensor: 
+    - name: "Renogy Battery State of Charge"
+      value_template: "{{ value_json.battery_soc }}"
+      unit_of_measurement: "%"
+      device_class: battery
+      
+    - name: "Renogy Battery Voltage"
+      value_template: "{{ value_json.battery_voltage | round(2) }}"
+      unit_of_measurement: "V"
+      device_class: voltage
+      
+    - name: "Renogy Battery Charging Amps"
+      value_template: "{{ value_json.battery_charging_amps  | round(2)}}"
+      device_class: current
+      unit_of_measurement: "A"
+      
+    - name: "Renogy Battery Charging Watts"
+      value_template: "{{ value_json.battery_charging_watts }}"
+      device_class: power
+      unit_of_measurement: "W"
+      
+    - name: "Renogy Controller Temperature"
+      value_template: "{{ value_json.controller_temperature }}"
+      device_class: temperature
+      unit_of_measurement: "°C"
+      
+    - name: "Renogy Battery Temperature"
+      value_template: "{{ value_json.battery_temperature }}"
+      device_class: temperature
+      unit_of_measurement: "°C"
+      
+    - name: "Renogy Controller Temperature F"
+      value_template: "{{ value_json.controller_temperatureF }}"
+      device_class: temperature
+      unit_of_measurement: "°F"
+      
+    - name: "Renogy Battery Temperature F"
+      value_template: "{{ value_json.battery_temperatureF }}"
+      device_class: temperature
+      unit_of_measurement: "°F"
+      
+    - name: "Renogy Load Voltage"
+      value_template: "{{ value_json.load_voltage | round(2)}}"
+      unit_of_measurement: "V"
+      device_class: voltage
+      
+    - name: "Renogy Load Amps"
+      value_template: "{{ value_json.load_amps }}"
+      device_class: current
+      unit_of_measurement: "A"
+      
+    - name: "Renogy Load Watts"
+      value_template: "{{ value_json.load_watts }}"
+      device_class: power
+      unit_of_measurement: "W"
+      
+    - name: "Renogy Solar Panel Voltage"
+      value_template: "{{ value_json.solar_panel_voltage | round(2)}}"
+      device_class: voltage
+      unit_of_measurement: "V"
+      
+    - name: "Renogy Solar Panel Amps"
+      value_template: "{{ value_json.solar_panel_amps }}"
+      device_class: current
+      unit_of_measurement: "A"
+      
+    - name: "Renogy Solar Panel Watts"
+      value_template: "{{ value_json.solar_panel_watts }}"
+      device_class: power
+      unit_of_measurement: "W"
+      
+    - name: "Renogy Minimum Battery Voltage Today"
+      value_template: "{{ value_json.min_battery_voltage_today | round(2)}}"
+      unit_of_measurement: "V"
+      device_class: voltage
+      
+    - name: "Renogy Maximum Battery Voltage Today"
+      value_template: "{{ value_json.max_battery_voltage_today | round(2)}}"
+      unit_of_measurement: "V"
+      device_class: voltage
+      
+    - name: "Renogy Maximum Charging Amps Today"
+      value_template: "{{ value_json.max_charging_amps_today }}"
+      device_class: current
+      unit_of_measurement: "A"
+      
+    - name: "Renogy Maximum Discharging Amps Today"
+      value_template: "{{ value_json.max_discharging_amps_today }}"
+      device_class: current
+      unit_of_measurement: "A"
+      
+    - name: "Renogy Maximum Charge Watts Today"
+      value_template: "{{ value_json.max_charge_watts_today }}"
+      device_class: power
+      unit_of_measurement: "W"
+      
+    - name: "Renogy Maximum Discharge Watts Today"
+      value_template: "{{ value_json.max_discharge_watts_today }}"
+      device_class: power
+      unit_of_measurement: "W"
+      
+    - name: "Renogy Charge Ampere-Hours Today"
+      value_template: "{{ value_json.charge_amphours_today }}"
+      unit_of_measurement: "AH"
+      
+    - name: "Renogy Discharge Ampere-Hours Today"
+      value_template: "{{ value_json.discharge_amphours_today }}"
+      unit_of_measurement: "AH"
+      
+    - name: "Renogy Charge Watt-Hours Today"
+      value_template: "{{ value_json.charge_watthours_today }}"
+      unit_of_measurement: "WH"
+      
+    - name: "Renogy Discharge Watt-Hours Today"
+      value_template: "{{ value_json.discharge_watthours_today }}"
+      unit_of_measurement: "WH"
+      
+    - name: "Renogy Controller Uptime (Days)"
+      value_template: "{{ value_json.controller_uptime_days }}"
+      unit_of_measurement: "d"
+      
+    - name: "Renogy Total Battery Overcharges"
+      value_template: "{{ value_json.total_battery_overcharges }}"
+      
+    - name: "Renogy Total Battery Full Charges"
+      value_template: "{{ value_json.total_battery_fullcharges }}"
+      
+    - name: "Renogy Last Update Time"
+      value_template: "{{ value_json.last_update_time }}"
