@@ -26,6 +26,7 @@ An example output of this would be:
 {"battery_soc":100,"battery_voltage":13.199999809265137,"battery_charging_amps":0.15000000596046448,"battery_charging_watts":1.9800000190734863,"controller_temperature":27,"battery_temperature":0,"controller_temperatureF":80.5999984741211,"battery_temperatureF":32,"load_voltage":0,"load_amps":0,"load_watts":0,"load_status":false,"solar_panel_voltage":13.800000190734863,"solar_panel_amps":0.070000000298023224,"solar_panel_watts":1,"min_battery_voltage_today":0,"max_battery_voltage_today":13.199999809265137,"max_charging_amps_today":6.3000001907348633,"max_discharging_amps_today":3.7999999523162842,"max_charge_watts_today":79,"max_discharge_watts_today":2,"charge_amphours_today":14,"discharge_amphours_today":0,"charge_watthours_today":182,"discharge_watthours_today":13,"controller_uptime_days":0,"total_battery_overcharges":0,"total_battery_fullcharges":0,"last_update_time":3291357,"voltage_rating":0,"amp_rating":20,"discharge_amp_rating":0,"type":0,"controller_name":0,"software_version":"1768","hardware_version":"01280","serial_number":"049153"}
 ```
 I have used that JSON output to monitor the stats with Home Assistant using its REST sensor. I have included my renogywanderer.yaml file, you will have to modify the IP address in the file to point to your device. I would recommend setting a static DHCP lease in your router for your ESP so its IP doesn't change
+
 ![Home Assistant](https://i.imgur.com/QjTWIST.png)
 
 There's also the /modbustest endpoint that displays the raw data from the Renogy controller for testing. 
