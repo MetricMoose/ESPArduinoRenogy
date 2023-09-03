@@ -1,18 +1,22 @@
 # ESPArduinoRenogy
 
 This is a fork of Wrybread's project at: https://github.com/wrybread/ESP32ArduinoRenogy
-The majority of the code interacting with the Renogy controller is their's. 
+The majority of the code interacting with the Renogy controller is from that project. Some of the web interface code is bodged from the HelloServer ESP8266WebServer example.
 
 My intention with this fork was to use one of my many unused ESP8266 modules (Specifically, the Wemos D1 Mini) to read the status of my Renogy solar setup over WiFi and integrate it into Home Assistant. 
 
+Most of the modifications to the original code were due to the ESP8266 only having one hardware UART, so I ripped out most of the serial debugging commands and am using the UART for talking with the Renogy controller. 
+
 ## Wiring / Setup 
 In my setup, I'm using an LM2696 DC-DC converter module to take power from the RJ12 connector to have a tidier setup. It also works fine when powered using the MicroUSB connector on the microcontroller.
+
 ![Wiring Diagram](https://i.imgur.com/4VDK7ai.png)
 
 ![Completed wiring](https://i.imgur.com/33c3uLC.jpg)
 
 ## Web Interface
 When accessing the microcontroller's IP in a browser, you can see a web interface that shows all the stats and the ability to toggle the load
+
 ![Web Interface](https://i.imgur.com/3phXtOU.png)
 
 There's also a JSON output of this information at http://YOURDEVICEIPHERE/rest
@@ -23,3 +27,5 @@ An example output of this would be:
 ```
 I have used that JSON output to monitor the stats with Home Assistant using its REST sensor. I have included my renogywanderer.yaml file, you will have to modify the IP address in the file to point to your device. I would recommend setting a static DHCP lease in your router for your ESP so its IP doesn't change
 ![Home Assistant](https://i.imgur.com/QjTWIST.png)
+
+There's also the /modbustest endpoint that displays the raw data from the Renogy controller for testing. 
